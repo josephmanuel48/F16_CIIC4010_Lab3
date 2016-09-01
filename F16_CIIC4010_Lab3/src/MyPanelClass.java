@@ -26,7 +26,7 @@ public class MyPanelClass extends JPanel {
                         int height = y2 - y1;
  
                         //Paint the background
-                        g.setColor(Color.DARK_GRAY);
+                        g.setColor(Color.red);
                         g.fillRect(x1, y1, width+1, height+1);
                         
                         //Draw a border
@@ -60,7 +60,34 @@ public class MyPanelClass extends JPanel {
 //                        p.addPoint(x1 + 15, y1 + 25);
 //                        g.setColor(Color.YELLOW);
 //                        g.fillPolygon(p);
-
+                      
+                        //Draw first white line
+                        Polygon pw= new Polygon();
+                        pw.addPoint(0, 34);
+                        pw.addPoint(0, 68);
+                        pw.addPoint(299,68);
+                        pw.addPoint(299,34);
+                        g.setColor(Color.WHITE);
+                        g.fillPolygon(pw);
+                        
+                      //Draw second white line
+                        Polygon pa= new Polygon();
+                        pa.addPoint(0, 102);
+                        pa.addPoint(0, 136);
+                        pa.addPoint(299,136);
+                        pa.addPoint(299,102);
+                        g.setColor(Color.WHITE);
+                        g.fillPolygon(pa);
+                        
+                        
+                        //Draw triangle
+                        Polygon ph= new Polygon();
+                        ph.addPoint(0,0);
+                        ph.addPoint(x1+150,y1+85);
+                        ph.addPoint(0,y1+170);
+                        g.setColor(Color.BLUE);
+                        g.fillPolygon(ph);
+                        
                         //Draw the star
                         Polygon p2 = new Polygon();
                         p2.addPoint(x1 + 25, y1 + 73);
@@ -75,6 +102,11 @@ public class MyPanelClass extends JPanel {
                         p2.addPoint(x1 + 38, y1 + 83);
                         g.setColor(Color.WHITE);
                         g.fillPolygon(p2);
+                        
+                        //Draw a border
+                        g.setColor(Color.BLACK);
+                        g.drawRect(x1,y1,299,169);
+                               
                         
 			}
 }
